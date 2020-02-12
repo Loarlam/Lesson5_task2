@@ -13,23 +13,26 @@ namespace Task2
         static void Main(string[] args)
         {
             int[] array;
-            Random randomIntValue = new Random();
 
             Console.Write("Количество элементов массива = ");
             int arraySize = Int32.Parse(Console.ReadLine());
-            WorkWithAnArray findInArray = new WorkWithAnArray(arraySize);
-
             array = new int[arraySize];
 
+            Random randomIntValue = new Random();
             for (int i = 0; i < array.Length; i++)
-            {
-                array[i] = randomIntValue.Next(1,100);
-            }
+                array[i] = randomIntValue.Next(1, 100);
 
+            WorkWithAnArray workWithAnArray = new WorkWithAnArray(array);
+
+            Console.Write("Элементы массива = ");
             for (int i = 0; i < array.Length; i++)
-            {
-                Console.WriteLine(array[i]);
-            }
+                Console.Write(workWithAnArray[i] + " ");
+
+            Console.WriteLine("\nНаибольшее значение массива = " + workWithAnArray.MaxElemntInArray);
+            Console.WriteLine("Наименьшее значение массива = " + workWithAnArray.MinElementInArray);
+            Console.WriteLine("Общая сумма элементов массива = " + workWithAnArray.SumOfElements);
+            Console.WriteLine("Среднее арифметическое всех элементов массива = " + workWithAnArray.AverageOfElements);
+            Console.WriteLine("Нечетные значения массива = " + workWithAnArray.OddElementsInArray);
 
             Console.ReadKey();
         }
