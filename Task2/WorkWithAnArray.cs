@@ -11,16 +11,12 @@ namespace Task2
             _array = filledArray;
         }
 
-        public int this[int index]
-        {
-            get => _array[index];
-        }
-
-        public int MaxElemntInArray { get => FindMaxElementInArray(); }
-        public int MinElementInArray { get => FindMinElementInArray(); }
-        public int SumOfElements { get => SumOfArrayElements(); }
-        public string AverageOfElements { get => AverageOfArrayElements(); }
-        public string OddElementsInArray { get => FindOddElementInArray(); }
+        public int this[int index] => _array[index];
+        public int MaxElemntInArray => FindMaxElementInArray();
+        public int MinElementInArray => FindMinElementInArray();
+        public int SumOfElements => SumOfArrayElements();
+        public string AverageOfElements => AverageOfArrayElements();
+        public string OddElementsInArray => FindOddElementInArray();
 
         int FindMaxElementInArray()
         {
@@ -42,9 +38,7 @@ namespace Task2
         {
             int sumOfElements = 0;
             for (int i = 0; i < _array.Length; i++)
-            {
                 sumOfElements += _array[i];
-            }
             return sumOfElements;
         }
 
